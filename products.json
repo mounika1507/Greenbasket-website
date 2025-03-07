@@ -1,0 +1,21 @@
+[
+    { "name": "Apple", "price": 1.50 },
+    { "name": "Banana", "price": 0.75 },
+    { "name": "Carrot", "price": 1.00 },
+    { "name": "Tomato", "price": 1.20 },
+    { "name": "Lettuce", "price": 2.00 },
+    { "name": "Orange", "price": 1.30 },
+    { "name": "Broccoli", "price": 1.80 },
+    { "name": "Strawberry", "price": 2.50 },
+    { "name": "Grapes", "price": 2.80 },
+    { "name": "Watermelon", "price": 3.50 },
+    { "name": "Pineapple", "price": 3.00 },
+    { "name": "Cucumber", "price": 1.10 },
+    { "name": "Spinach", "price": 2.20 },
+    { "name": "Mango", "price": 2.75 },
+    { "name": "Blueberry", "price": 3.00 },
+    { "name": "Peach", "price": 1.90 },
+    { "name": "Potato", "price": 0.90 },
+    { "name": "Onion", "price": 0.80 },
+    { "name": "Garlic", "price": 1.50 }
+]

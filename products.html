@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Basket</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Our Products</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="products" class="product-list"></section>
+    
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch("products.json")
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("Network response was not ok");
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log("Products Loaded:", data); // Debugging Log
+                    let productsContainer = document.getElementById("products");
+                    data.forEach(product => {
+                        let productElement = document.createElement("div");
+                        productElement.classList.add("product");
+                        productElement.innerHTML = `
+                            <h3>${product.name}</h3>
+                            <p>Price: $${product.price}</p>
+                            <button onclick="addToCart('${product.name}', ${product.price})">Add to Cart</button>
+                        `;
+                        productsContainer.appendChild(productElement);
+                    });
+                })
+                .catch(error => console.error("Error loading products:", error));
+        });
+    </script>
+    <footer>
+        <p>&copy; 2025 Green Basket. All rights reserved.</p>
+    </footer>    
+</body>
+</html>
